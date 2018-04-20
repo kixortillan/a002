@@ -1,0 +1,87 @@
+@import "node_modules/materialize-css/sass/components/_color.scss";
+@import "node_modules/materialize-css/sass/components/_variables.scss";
+@import "node_modules/materialize-css/sass/materialize.scss";
+
+
+html, 
+body {
+  height: 100%;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.count-number {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #0057AD;
+}
+
+.tbl-abizo-counter thead tr th * {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.nav {
+  box-shadow: none;
+}
+
+.range-filter.active {
+  color: #0057AD;
+  font-weight: 500;
+}
+
+.range-filter {
+  color: #000;
+  opacity: 0.54;
+  font-weight: bold;
+}
+
+.metrics-box {
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.metrics-box-content {
+  padding: 0.5rem;
+}
+
+.metrics-title {
+  font-size: 0.75rem;
+}
+
+.metrics-number {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+nav .brand-logo {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.c3-ygrid {
+  stroke-dasharray: 0 !important;
+}
+
+.c3-grid line {
+  stroke: #e0e0e0 !important;
+}
+
+.c3-axis path {
+  stroke: #e0e0e0 !important;
+}
+
+.c3-axis line {
+  stroke: none !important;
+}
+
+.c3-axis .tick tspan {
+  font-size: 11px !important;
+}
+
+select {
+  height: 2rem;
+}

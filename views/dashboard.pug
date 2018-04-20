@@ -1,0 +1,96 @@
+extends layout
+
+block content
+  div(class='row fullheight')
+    div(class='col s6 fullheight')
+      div(class='row',style='padding-top:20px;')
+        table(class='tbl-abizo-counter')
+          thead
+            tr
+              th
+                div(class='valign-wrapper')
+                  img(src='https://s3-us-west-2.amazonaws.com/abizo2/assets/images/abizo-logo.png',style='display: block;margin: 0 auto;height: 80px;')
+              th
+                h6 2018-03-27 00:00:00
+              th
+                h6 2018-03-28 00:00:00
+          tbody
+            tr
+              td(class='center-align') 
+                span(class='count-number') IOS
+              td 
+                span(class='count-number') 99999
+              td 
+                span(class='count-number') 99999
+            tr
+              td(class='center-align')
+                span(class='count-number') ANDROID
+              td 
+                span(class='count-number') 99999
+              td 
+                span(class='count-number') 99999
+
+
+    div(class='col s6 fullheight')
+      div(id='map',class='fullheight')
+
+block post
+  script.
+    var map;
+
+    function initMap() {
+      var ph = {lat: 12.320485279370809, lng: 123.35451884980625};
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 6,
+        center: ph,
+        styles: [
+          {
+            "featureType": "landscape",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#b1ccdc"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "geometry.fill",
+            "stylers": [
+              {
+                "color": "#0057ad"
+              }
+            ]
+          },
+          {
+            "featureType": "water",
+            "elementType": "labels",
+            "stylers": [
+              {
+                "color": "#ffffff"
+              }
+            ]
+          }
+        ]
+      });
+    }
+
+    function newMarker(lat, lng) {
+      return new google.maps.Marker({
+        position: new google.maps.LatLng(lat, lng),
+        map: map,
+      });
+    }
+
+    $.ajax({
+      url: '',
+      method: 'GET',
+      dataType: 'json',
+    }).then((resp) => {
+
+    }).catch((err) => {
+
+    });
+
+  script(async,defer,src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBVwj2Ugy8nsyy-fxDZ9itj8NbtUm9bg00&callback=initMap')
